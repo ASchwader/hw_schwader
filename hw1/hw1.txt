@@ -1,0 +1,12 @@
+Problem 1
+
+A. 1, 2 for general cases only, 4, and 5.
+B. All of the above
+C. 2
+D. 2
+
+Problem 2
+A. 3
+B. git add hw1q2b.cpp
+B-2. git log
+C. The commit won't go through because a message wasn't specified.

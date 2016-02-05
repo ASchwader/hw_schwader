@@ -1,0 +1,64 @@
+1a. README.md is unmodified.
+1b. README.md is modified and fun_problem.txt is untracked
+1c. Both files are staged for commit.
+1d. Both files are modified but not staged for commit.
+1e. README.md is modified and staged for commit. and fun_problem.txt is unmodified. fun_problem.txt is empty because the git checkout command discarded the "So far, so good" change made to it.
+1f. README.md is modified and has been unstaged because a change was made to it.
+
+3a. for (int i = 0; i < n; i ++) This loop will run n times
+    if (A[i] == 0) {
+       for (int j = 1; j < n; j *= 2) //This loop will run log(n) times.
+          { /* do something that takes O(1) time */ } //Constant
+    }  // Runtime = Θ(nlog(n))
+
+3b. for (int i = 1; i < n; i ++)//This loop will run n times
+{
+   for (int j = i; j < n; j ++) //This loop will run n times
+   {
+        if (j % i == 0)
+        {
+            for (int k = 1; k < n; k *= 2)// This loop will run log(n) times
+               { /* do something that takes O(1) time */ } //Constant
+        }
+   }
+} //Runtime = Θ((n^2)*log(n))
+
+3c. int *a = new int [10];
+int size = 10;
+for (int i = 0; i < n; i ++) //This loop will run n times
+{
+   if (i == size)
+   {  
+       int newsize = size+10;
+       int *b = new int [newsize];
+       for (int j = 0; j < size; j ++) b[j] = a[j];  //Because size is 10 and increses by 10 on every resize, the loop will n/10 times.
+       delete [] a;
+       a = b; //
+       size = newsize; //Constant
+   }
+   a[i] = sqrt(i); //Constant
+}  //Runtime = Θ((n^2))
+
+3d.int *a = new int [10];
+int size = 10;
+for (int i = 0; i < n; i ++) // This loop will run n times.
+{
+   if (i == size) 
+   {  
+       int newsize = 2*size;
+       int *b = new int [newsize];
+       for (int j = 0; j < size; j ++) b[j] = a[j]; //This loop wil run log(n) times because it resizes by a factor of 2.
+       delete [] a;
+       a = b;
+       size = newsize;
+   }
+   a[i] = sqrt(i); //Constant
+} Runtime = Θ((n*log(n))
+
+
+4-1. A list of strings containing the name (string) of the President with the indicies of the list being the order in which they served. Since the order of the Presidents will not change and additions will only need to be appended, a list is the most efficient choice.
+4-2. A map of ints with the key as a zip code and the population estimate as the value. A map works well here since the population estimates will be looked up by an input zip code.
+4-3. A set of names (strings) or ID numbers (ints) of the students. Since order is not important and we're not looking up specific students, a set is the best choice.
+4-4. Two maps. The first uses the student ID number (int) as a key, with the value being a pointer second map that uses the assignment nuber (int) as a key to the grade values (also int)
+
+5.The linked list 5,4,3,2,1 is returned. FuncA recurses all the way to the end of the list, in this case to 5, to set the "out" pointer". From there it starts calling funcB which changes the the "next" pointer to the node before it. 
